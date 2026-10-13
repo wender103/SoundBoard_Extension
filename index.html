@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundBoard – Privacy Policy</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <style>
+        /* ============================================================
+           TEMA CLARO (padrão)
+           ============================================================ */
+        :root {
+            --primary_color: #6c5ce7;
+            --primary_color_dark: #6353df;
+            --secondary_color: #00cec9;
+            --secondary_color_dark: #07b3b0;
+            --border_color: #e0e0e0;
+            --switch_color: #e9e9e9;
+
+            --background_1: #f9f9fb;
+            --background_2: #f4f4f4;
+
+            --sombra_1: 0 2px 8px transparent;
+
+            --hover_1: #0000000d;
+            --hover_bg_1: #e8e8e8;
+
+            --text_color: #000;
+            --text_color_secondary: #667;
+            --text_color_terciary: rgb(108, 111, 119);
+            --text_color_quaternary: #6c6f778c;
+            --text_color_oposto: #fff;
+
+            --border_radius_1: 4px;
+            --transition_1: all 0.2s ease;
+            --transform_1: translateX(2px);
+            --fonte_1: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --card_bg: #ffffff;
+            --card_shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+            --highlight_bg: #fff8dd;
+            --highlight_border: #f0e2a5;
+            --highlight_text: #4a3f0e;
+            --highlight_strong: #332b08;
+            --header_shadow: 0 2px 8px rgba(108, 92, 231, 0.2);
+            --header_bg: #6c5ce7;
+            --logo_badge_bg: #ffffff;
+            --logo_badge_shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary_color: #6c8cff;
+                --primary_color_dark: #5a7ae0;
+                --secondary_color: #4dd0e1;
+                --secondary_color_dark: #26c6da;
+                --border_color: #3a3f4b;
+                --switch_color: #2b2f3a;
+                --background_1: #1e222b;
+                --background_2: #161a22;
+                --hover_1: rgba(108, 140, 255, 0.12);
+                --hover_bg_1: #2a2f3c;
+                --text_color: #edf2f7;
+                --text_color_secondary: #a0aec0;
+                --text_color_terciary: #718096;
+                --text_color_quaternary: rgba(113, 128, 150, 0.5);
+                --text_color_oposto: #ffffff;
+
+                --card_bg: #232833;
+                --card_shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                --highlight_bg: #2e2a1a;
+                --highlight_border: #4a4020;
+                --highlight_text: #e8dfa8;
+                --highlight_strong: #fff3b8;
+                --header_shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+                --header_bg: #161a22;
+                --logo_badge_bg: rgba(108, 140, 255, 0.12);
+                --logo_badge_shadow: none;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            min-height: 100vh;
+            font-family: var(--fonte_1);
+            background: var(--background_1);
+            color: var(--text_color);
+            font-size: 15px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--header_bg);
+            color: var(--text_color_oposto);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: var(--header_shadow);
+            transition: background 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.2px;
+            color: var(--text_color_oposto);
+            user-select: none;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--logo_badge_bg);
+            flex-shrink: 0;
+            box-shadow: var(--logo_badge_shadow);
+            transition: background 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .header-logo svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .header-logo svg .sb-logo-square {
+            fill: var(--primary_color);
+            transition: fill 0.25s ease;
+        }
+
+        .header-logo svg .sb-logo-arrow {
+            fill: var(--secondary_color);
+            transition: fill 0.25s ease;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .lang-wrapper > svg.lang-globe {
+            position: absolute;
+            left: 10px;
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+            opacity: 0.85;
+            color: var(--text_color_oposto);
+            z-index: 1;
+        }
+
+        select#lang-selector {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--text_color_oposto);
+            font-family: var(--fonte_1);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 7px 30px 7px 30px;
+            border-radius: var(--border_radius_1);
+            cursor: pointer;
+            transition: var(--transition_1);
+            outline: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        select#lang-selector:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        select#lang-selector:focus {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+
+        select#lang-selector option {
+            background: #ffffff;
+            color: #000;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            select#lang-selector option {
+                background: #1e222b;
+                color: #edf2f7;
+            }
+        }
+
+        .lang-arrow {
+            position: absolute;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            opacity: 0.85;
+            color: var(--text_color_oposto);
+            z-index: 1;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary_color);
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+            transition: color 0.25s ease;
+        }
+
+        .page-subtitle {
+            font-size: 13.5px;
+            color: var(--text_color_secondary);
+            margin-bottom: 32px;
+            transition: color 0.25s ease;
+        }
+
+        .card {
+            background: var(--card_bg);
+            border: 1px solid var(--border_color);
+            border-radius: 8px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            box-shadow: var(--card_shadow);
+            transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary_color);
+            margin-bottom: 12px;
+            letter-spacing: -0.1px;
+            transition: color 0.25s ease;
+        }
+
+        section p {
+            color: var(--text_color);
+            font-size: 14.5px;
+            line-height: 1.65;
+            margin-bottom: 12px;
+            transition: color 0.25s ease;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: var(--text_color);
+            transition: color 0.25s ease;
+        }
+
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--primary_color);
+            opacity: 0.75;
+            transition: background 0.25s ease;
+        }
+
+        .highlight {
+            background: var(--highlight_bg);
+            border: 1px solid var(--highlight_border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: var(--highlight_text);
+            transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .highlight strong {
+            color: var(--highlight_strong);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--primary_color);
+            color: var(--text_color_oposto);
+            border-radius: var(--border_radius_1);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: 1px solid transparent;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary_color_dark);
+            transform: translateY(-1px);
+        }
+
+        .contact-btn.discord {
+            background: #5865f2;
+        }
+
+        .contact-btn.discord:hover {
+            background: #4752c4;
+        }
+
+        .contact-btn svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text_color_quaternary);
+            font-size: 12.5px;
+            border-top: 1px solid var(--border_color);
+            background: var(--background_2);
+            margin-top: 40px;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 10px 16px;
+            }
+
+            .header-logo {
+                font-size: 16px;
+            }
+
+            .logo-badge {
+                width: 30px;
+                height: 30px;
+                border-radius: 6px;
+            }
+
+            .header-logo svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            main {
+                padding: 24px 16px 60px;
+            }
+
+            .page-title {
+                font-size: 22px;
+            }
+
+            .card {
+                padding: 22px 20px;
+            }
+
+            section h2 {
+                font-size: 16px;
+            }
+
+            select#lang-selector {
+                padding: 6px 26px 6px 26px;
+                font-size: 12px;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <div class="logo-badge">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="sb-logo-square" x="5"  y="5"  width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="36" y="5"  width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="67" y="5"  width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="5"  y="36" width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="36" y="36" width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="67" y="36" width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="5"  y="67" width="28" height="28" rx="4"/>
+                    <rect class="sb-logo-square" x="36" y="67" width="28" height="28" rx="4"/>
+                    <path class="sb-logo-arrow" d="M95 67L67 80L75 83L75 95L82 86L91 93L95 67Z"/>
+                </svg>
+            </div>
+            <span>SoundBoard</span>
+        </div>
+
+        <div class="header-right">
+            <div class="lang-wrapper">
+                <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+
+                <select id="lang-selector" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="pt-BR">Português (Brasil)</option>
+                    <option value="fr">Français</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh-CN">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="es-419">Español (Latinoamérica)</option>
+                    <option value="de">Deutsch</option>
+                </select>
+
+                <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title" id="page-title">SoundBoard – Privacy Policy</h1>
+        <p class="page-subtitle" id="page-subtitle">Last updated: September 2026</p>
+
+        <div class="card">
+            <section>
+                <h2 id="intro-title">Overview</h2>
+                <p id="intro-text"></p>
+            </section>
+        </div>
+
+        <div class="card">
+            <section>
+                <h2 id="data-collection-title">Data Collection</h2>
+                <p id="data-collection-text"></p>
+            </section>
+        </div>
+
+        <div class="card">
+            <section>
+                <h2 id="data-usage-title">Data Usage</h2>
+                <ul>
+                    <li id="usage-1"></li>
+                    <li id="usage-2"></li>
+                    <li id="usage-3"></li>
+                </ul>
+                <div class="highlight" id="highlight-text"></div>
+            </section>
+        </div>
+
+        <div class="card">
+            <section>
+                <h2 id="contact-title">Contact</h2>
+                <p id="contact-text"></p>
+
+                <div class="contact-links">
+                    <a class="contact-btn" href="mailto:soundboard25@gmail.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>soundboard25@gmail.com</span>
+                    </a>
+
+                    <a class="contact-btn discord" href="https://discord.gg/RFT6vkPZXv" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <span id="footer-text">© 2026 SoundBoard. All rights reserved.</span>
+    </footer>
+
+    <script>
+        const TRADUCOES = {
+            'en': {
+                page_title: 'SoundBoard – Privacy Policy',
+                page_subtitle: 'Last updated: September 2026',
+                intro_title: 'Overview',
+                intro_text: 'SoundBoard lets you find sounds on supported web pages and send them to the SoundBoard application on your computer with a single click. When you click the SoundBoard button on a page, the extension reads the publicly visible address of the sound and forwards it to the SoundBoard application running locally on your computer. The extension does not process, store, or modify any media.',
+                data_collection_title: 'Data Collection',
+                data_collection_text: 'The extension does not collect, store, or sell personal information.',
+                data_usage_title: 'Data Usage',
+                usage_1: 'No browsing history is collected.',
+                usage_2: 'No personal accounts are accessed.',
+                usage_3: 'No data is sent to external servers for analytics or advertising.',
+                highlight_text: '<strong>The extension only communicates with the SoundBoard application installed locally on your computer</strong> to complete the request made by the user. Nothing is ever sent to us or to any third party.',
+                contact_title: 'Contact',
+                contact_text: 'For questions, contact us by email or join our Discord community:',
+                footer_text: '© 2026 SoundBoard. All rights reserved.'
+            },
+
+            'pt-BR': {
+                page_title: 'SoundBoard – Política de Privacidade',
+                page_subtitle: 'Última atualização: Setembro de 2026',
+                intro_title: 'Visão Geral',
+                intro_text: 'O SoundBoard permite encontrar sons em páginas compatíveis e enviá-los ao aplicativo SoundBoard no seu computador com um único clique. Ao clicar no botão do SoundBoard em uma página, a extensão lê o endereço público do som e o encaminha ao aplicativo SoundBoard em execução local no seu computador. A extensão não processa, armazena ou modifica nenhuma mídia.',
+                data_collection_title: 'Coleta de Dados',
+                data_collection_text: 'A extensão não coleta, armazena ou vende informações pessoais.',
+                data_usage_title: 'Uso de Dados',
+                usage_1: 'Nenhum histórico de navegação é coletado.',
+                usage_2: 'Nenhuma conta pessoal é acessada.',
+                usage_3: 'Nenhum dado é enviado a servidores externos para análises ou publicidade.',
+                highlight_text: '<strong>A extensão apenas se comunica com o aplicativo SoundBoard instalado localmente no seu computador</strong> para concluir a solicitação feita pelo usuário. Nada é enviado para nós ou para terceiros.',
+                contact_title: 'Contato',
+                contact_text: 'Para dúvidas, entre em contato por e-mail ou acesse nossa comunidade no Discord:',
+                footer_text: '© 2026 SoundBoard. Todos os direitos reservados.'
+            },
+
+            'fr': {
+                page_title: 'SoundBoard – Politique de Confidentialité',
+                page_subtitle: 'Dernière mise à jour : Septembre 2026',
+                intro_title: 'Aperçu',
+                intro_text: "SoundBoard vous permet de trouver des sons sur des pages compatibles et de les envoyer à l'application SoundBoard sur votre ordinateur en un seul clic. Lorsque vous cliquez sur le bouton SoundBoard d'une page, l'extension lit l'adresse publique du son et la transmet à l'application SoundBoard exécutée localement sur votre ordinateur. L'extension ne traite, ne stocke ni ne modifie aucun média.",
+                data_collection_title: 'Collecte de Données',
+                data_collection_text: "L'extension ne collecte, ne stocke ni ne vend d'informations personnelles.",
+                data_usage_title: 'Utilisation des Données',
+                usage_1: "Aucun historique de navigation n'est collecté.",
+                usage_2: "Aucun compte personnel n'est consulté.",
+                usage_3: "Aucune donnée n'est envoyée à des serveurs externes pour des analyses ou de la publicité.",
+                highlight_text: "<strong>L'extension communique uniquement avec l'application SoundBoard installée localement sur votre ordinateur</strong> pour effectuer la demande de l'utilisateur. Rien n'est jamais envoyé à nous ou à un tiers.",
+                contact_title: 'Contact',
+                contact_text: 'Pour toute question, contactez-nous par e-mail ou rejoignez notre communauté Discord :',
+                footer_text: '© 2026 SoundBoard. Tous droits réservés.'
+            },
+
+            'ru': {
+                page_title: 'SoundBoard – Политика конфиденциальности',
+                page_subtitle: 'Последнее обновление: сентябрь 2026 г.',
+                intro_title: 'Обзор',
+                intro_text: 'SoundBoard позволяет находить звуки на поддерживаемых веб-страницах и отправлять их в приложение SoundBoard на вашем компьютере одним щелчком мыши. При нажатии кнопки SoundBoard на странице расширение считывает общедоступный адрес звука и передаёт его в приложение SoundBoard, работающее локально на вашем компьютере. Расширение не обрабатывает, не хранит и не изменяет какие-либо медиафайлы.',
+                data_collection_title: 'Сбор данных',
+                data_collection_text: 'Расширение не собирает, не хранит и не продаёт персональную информацию.',
+                data_usage_title: 'Использование данных',
+                usage_1: 'История просмотров не собирается.',
+                usage_2: 'Личные аккаунты не используются.',
+                usage_3: 'Данные не отправляются на внешние серверы для аналитики или рекламы.',
+                highlight_text: '<strong>Расширение взаимодействует только с приложением SoundBoard, установленным локально на вашем компьютере</strong> для выполнения запроса пользователя. Ничего никогда не отправляется нам или третьим лицам.',
+                contact_title: 'Контакт',
+                contact_text: 'По вопросам свяжитесь с нами по электронной почте или присоединяйтесь к нашему сообществу в Discord:',
+                footer_text: '© 2026 SoundBoard. Все права защищены.'
+            },
+
+            'zh-CN': {
+                page_title: 'SoundBoard – 隐私政策',
+                page_subtitle: '最后更新：2026 年 9 月',
+                intro_title: '概述',
+                intro_text: 'SoundBoard 让您可以在支持的网页上找到声音，并一键将其发送到您计算机上的 SoundBoard 应用程序。当您点击页面上的 SoundBoard 按钮时，扩展程序会读取声音的公开可见地址，并将其转发到您计算机上本地运行的 SoundBoard 应用程序。该扩展程序不会处理、存储或修改任何媒体。',
+                data_collection_title: '数据收集',
+                data_collection_text: '该扩展程序不会收集、存储或出售个人信息。',
+                data_usage_title: '数据使用',
+                usage_1: '不收集浏览历史记录。',
+                usage_2: '不访问个人账户。',
+                usage_3: '不会将数据发送到外部服务器用于分析或广告。',
+                highlight_text: '<strong>该扩展程序仅与您计算机上本地安装的 SoundBoard 应用程序通信</strong>，以完成用户发出的请求。任何内容都不会发送给我们或任何第三方。',
+                contact_title: '联系方式',
+                contact_text: '如有疑问，请通过电子邮件联系我们或加入我们的 Discord 社区：',
+                footer_text: '© 2026 SoundBoard。保留所有权利。'
+            },
+
+            'ja': {
+                page_title: 'SoundBoard – プライバシーポリシー',
+                page_subtitle: '最終更新日：2026年9月',
+                intro_title: '概要',
+                intro_text: 'SoundBoard を使用すると、サポートされている Web ページでサウンドを見つけ、ワンクリックでお使いのコンピューター上の SoundBoard アプリケーションに送信できます。ページ上の SoundBoard ボタンをクリックすると、拡張機能は公開されているサウンドのアドレスを読み取り、お使いのコンピューターでローカルに実行されている SoundBoard アプリケーションに転送します。この拡張機能は、メディアを処理、保存、変更しません。',
+                data_collection_title: 'データ収集',
+                data_collection_text: 'この拡張機能は、個人情報を収集、保存、販売しません。',
+                data_usage_title: 'データの使用',
+                usage_1: '閲覧履歴は収集されません。',
+                usage_2: '個人アカウントにはアクセスしません。',
+                usage_3: '分析や広告のために外部サーバーにデータを送信することはありません。',
+                highlight_text: '<strong>この拡張機能は、お使いのコンピューターにローカルにインストールされた SoundBoard アプリケーションとのみ通信します</strong>。ユーザーが発信したリクエストを完了するためだけに使用されます。私たちや第三者に何かが送信されることは一切ありません。',
+                contact_title: 'お問い合わせ',
+                contact_text: 'ご質問がございましたら、メールでお問い合わせいただくか、Discord コミュニティにご参加ください：',
+                footer_text: '© 2026 SoundBoard. All rights reserved.'
+            },
+
+            'es-419': {
+                page_title: 'SoundBoard – Política de Privacidad',
+                page_subtitle: 'Última actualización: Septiembre de 2026',
+                intro_title: 'Descripción General',
+                intro_text: 'SoundBoard te permite encontrar sonidos en páginas compatibles y enviarlos a la aplicación SoundBoard en tu computadora con un solo clic. Cuando haces clic en el botón de SoundBoard en una página, la extensión lee la dirección pública del sonido y la reenvía a la aplicación SoundBoard que se ejecuta localmente en tu computadora. La extensión no procesa, almacena ni modifica ningún medio.',
+                data_collection_title: 'Recopilación de Datos',
+                data_collection_text: 'La extensión no recopila, almacena ni vende información personal.',
+                data_usage_title: 'Uso de Datos',
+                usage_1: 'No se recopila historial de navegación.',
+                usage_2: 'No se accede a cuentas personales.',
+                usage_3: 'No se envían datos a servidores externos para análisis o publicidad.',
+                highlight_text: '<strong>La extensión solo se comunica con la aplicación SoundBoard instalada localmente en tu computadora</strong> para completar la solicitud realizada por el usuario. Nunca se envía nada a nosotros ni a terceros.',
+                contact_title: 'Contacto',
+                contact_text: 'Para consultas, contáctanos por correo electrónico o únete a nuestra comunidad de Discord:',
+                footer_text: '© 2026 SoundBoard. Todos los derechos reservados.'
+            },
+
+            'de': {
+                page_title: 'SoundBoard – Datenschutzerklärung',
+                page_subtitle: 'Letzte Aktualisierung: September 2026',
+                intro_title: 'Überblick',
+                intro_text: 'Mit SoundBoard können Sie Klänge auf unterstützten Webseiten finden und sie mit einem einzigen Klick an die SoundBoard-Anwendung auf Ihrem Computer senden. Wenn Sie auf einer Seite auf die SoundBoard-Schaltfläche klicken, liest die Erweiterung die öffentlich sichtbare Adresse des Klangs und leitet sie an die lokal auf Ihrem Computer laufende SoundBoard-Anwendung weiter. Die Erweiterung verarbeitet, speichert oder verändert keine Medien.',
+                data_collection_title: 'Datenerfassung',
+                data_collection_text: 'Die Erweiterung sammelt, speichert oder verkauft keine persönlichen Informationen.',
+                data_usage_title: 'Datennutzung',
+                usage_1: 'Es wird kein Browserverlauf erfasst.',
+                usage_2: 'Es wird nicht auf persönliche Konten zugegriffen.',
+                usage_3: 'Es werden keine Daten für Analysen oder Werbung an externe Server gesendet.',
+                highlight_text: '<strong>Die Erweiterung kommuniziert nur mit der lokal auf Ihrem Computer installierten SoundBoard-Anwendung</strong>, um die vom Benutzer angeforderte Anfrage abzuschließen. Es wird niemals etwas an uns oder Dritte gesendet.',
+                contact_title: 'Kontakt',
+                contact_text: 'Bei Fragen kontaktieren Sie uns per E-Mail oder treten Sie unserer Discord-Community bei:',
+                footer_text: '© 2026 SoundBoard. Alle Rechte vorbehalten.'
+            }
+        };
+
+        const IDIOMAS_SUPORTADOS = ['en', 'pt-BR', 'fr', 'ru', 'zh-CN', 'ja', 'es-419', 'de'];
+
+        function normalizar_idioma(lang_raw) {
+            const lang = String(lang_raw || '').toLowerCase();
+
+            if (lang.startsWith('pt')) return 'pt-BR';
+            if (lang.startsWith('zh')) return 'zh-CN';
+            if (lang.startsWith('es')) return 'es-419';
+            if (lang.startsWith('ja')) return 'ja';
+            if (lang.startsWith('fr')) return 'fr';
+            if (lang.startsWith('ru')) return 'ru';
+            if (lang.startsWith('de')) return 'de';
+            if (lang.startsWith('en')) return 'en';
+
+            return 'en';
+        }
+
+        function detectar_idioma() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const lang_url = params.get('lang');
+                if (lang_url) {
+                    const normalizado = normalizar_idioma(lang_url);
+                    if (IDIOMAS_SUPORTADOS.includes(normalizado)) return normalizado;
+                }
+            } catch (e) {}
+
+            try {
+                if (Array.isArray(navigator.languages) && navigator.languages.length > 0) {
+                    return normalizar_idioma(navigator.languages[0]);
+                }
+            } catch (e) {}
+
+            try {
+                return normalizar_idioma(navigator.language || navigator.userLanguage || 'en');
+            } catch (e) {}
+
+            return 'en';
+        }
+
+        function aplicar_traducao(codigo_idioma) {
+            const pacote = TRADUCOES[codigo_idioma] || TRADUCOES.en;
+
+            function t(chave) {
+                if (pacote && pacote[chave]) return pacote[chave];
+                if (TRADUCOES.en && TRADUCOES.en[chave]) return TRADUCOES.en[chave];
+                return '';
+            }
+
+            const mapa = {
+                'page-title': t('page_title'),
+                'page-subtitle': t('page_subtitle'),
+                'intro-title': t('intro_title'),
+                'intro-text': t('intro_text'),
+                'data-collection-title': t('data_collection_title'),
+                'data-collection-text': t('data_collection_text'),
+                'data-usage-title': t('data_usage_title'),
+                'usage-1': t('usage_1'),
+                'usage-2': t('usage_2'),
+                'usage-3': t('usage_3'),
+                'highlight-text': t('highlight_text'),
+                'contact-title': t('contact_title'),
+                'contact-text': t('contact_text'),
+                'footer-text': t('footer_text')
+            };
+
+            for (const id in mapa) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+                if (id === 'highlight-text') {
+                    el.innerHTML = mapa[id];
+                } else {
+                    el.textContent = mapa[id];
+                }
+            }
+
+            document.documentElement.lang = codigo_idioma;
+            document.title = t('page_title');
+
+            const select = document.getElementById('lang-selector');
+            if (select) select.value = codigo_idioma;
+
+            try {
+                localStorage.setItem('soundboard_privacy_lang', codigo_idioma);
+            } catch (e) {}
+        }
+
+        (function init() {
+            let idioma = null;
+            try {
+                const salvo = localStorage.getItem('soundboard_privacy_lang');
+                if (salvo && IDIOMAS_SUPORTADOS.includes(salvo)) {
+                    idioma = salvo;
+                }
+            } catch (e) {}
+
+            if (!idioma) {
+                idioma = detectar_idioma();
+            }
+
+            aplicar_traducao(idioma);
+
+            const select = document.getElementById('lang-selector');
+            if (select) {
+                select.addEventListener('change', (evento) => {
+                    const novo_idioma = evento.target.value;
+                    if (IDIOMAS_SUPORTADOS.includes(novo_idioma)) {
+                        aplicar_traducao(novo_idioma);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
